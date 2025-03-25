@@ -1,3 +1,7 @@
+---
+import "../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,17 +10,36 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
+		
+		<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 	</head>
 	<body>
-		<slot />
+		<div class="fixed inset-0 -z-10 w-full h-full bg-neutral-950 
+		bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] 
+		bg-fixed 
+		sm:bg-[radial-gradient(ellipse_100%_100%_at_50%_50%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
+	</div>
+			<slot />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
+<style is:global>
+	* {
 		margin: 0;
-		width: 100%;
-		height: 100%;
+		padding: 0;
+		box-sizing: border-box;
 	}
+	html{
+		font-family: 'Poppins', sans-serif;
+		scroll-behavior: smooth;
+	}
+	body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-width: 100%;
+	}
+
 </style>

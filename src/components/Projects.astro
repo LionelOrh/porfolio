@@ -1,0 +1,302 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import ProyectoIniciarSesion from "../assets/ProyectoIniciarSesion.webp";
+import ProyectoCRUD from "../assets/ProyectoCrud.webp";
+import SstemaAccesos from "../assets/Sistema-Accesos.webp";
+import SistemaMMW from "../assets/MensajeMasivoWhastApp.webp";
+import Link from "./icons/Link.astro";
+import Code from "./icons/Code.astro";
+const projects = [
+    {
+        title: "Sistema de Autenticación y Autorización",
+        description:
+            "Sistema de autenticación y autorización con Spring Security y Angular. Implementa autenticación basada en JWT para sesiones seguras y manejo de roles. Las contraseñas se almacenan de forma encriptada para mayor seguridad. Backend desarrollado con Spring Boot y base de datos MySQL y con un frontend dinámico con Angular.",
+        image: ProyectoIniciarSesion,
+        link: "",
+        GitHub: [
+            {
+                name: "Backend",
+                url: "https://github.com/LionelOrh/Sistema-Autenticacion-Autorizacion-Backend.git",
+            },
+            {
+                name: "Frontend",
+                url: "https://github.com/LionelOrh/Sistema-Autenticacion-Autorizacion-FrontEnd.git",
+            },
+        ],
+        technologies: [
+            {
+                name: "Spring Boot",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
+            },
+            {
+                name: "Angular",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg",
+            },
+            {
+                name: "MySQL",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+            },
+        ],
+    },
+    {
+        title: "Sistema de Accesos y gestión de Roles",
+        description:
+            "Sistema de gestión de accesos y roles con autenticación de usuarios y control de permisos. Incorpora lectura de códigos de barras mediante escáner para agilizar el registro de accesos. Desarrollado con Spring Boot en el backend, Angular en el frontend y MySQL como base de datos.",
+        image: SstemaAccesos,
+        link: "",
+        GitHub: [
+            {
+                name: "Backend",
+                url: "https://github.com/LionelOrh/Prueba-Tecnica-MCC-Backend.git",
+            },
+            {
+                name: "Frontend",
+                url: "https://github.com/LionelOrh/Prueba-Tecnica-MCC-FrontEnd.git",
+            },
+        ],
+        technologies: [
+            {
+                name: "Spring Boot",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
+            },
+            {
+                name: "Angular",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg",
+            },
+            {
+                name: "MySQL",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+            },
+        ],
+    },
+    {
+        title: "Sistema de Envio Masivos de mensajes al WhasApp",
+        description:
+            "Sistema para el envío masivo de mensajes a WhatsApp, desarrollado con Spring Boot. Permite la automatización del envío de mensajes a múltiples destinatarios a través de una API. Las pruebas y consultas a la API se realizan con Insomnia.",
+        image: SistemaMMW,
+        link: "",
+        GitHub: [
+            {
+                name: "Code",
+                url: "https://github.com/LionelOrh/Mensajes-Masivos-WhatsApp.git",
+            },
+        ],
+        technologies: [
+            {
+                name: "Spring Boot",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
+            },
+            {
+                name: "Insomnia",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/insomnia/insomnia-original.svg",
+            },
+        ],
+    },
+    {
+        title: "Gestión de Registros (CRUD)",
+        description:
+            "Desarrollo de un CRUD que permite crear, leer, actualizar y eliminar registros. El backend está construido con Spring Boot, proporcionando una API REST segura y eficiente. El frontend está desarrollado con React y estilizado con Tailwind CSS, ofreciendo una interfaz moderna y responsiva.",
+        image: ProyectoCRUD,
+        link: "https://prueba-tecnica-mcc-front-end.vercel.app/",
+        GitHub: [
+            {
+                name: "Backend",
+                url: "https://github.com/LionelOrh/Prueba-Tecnica-MCC-Backend.git",
+            },
+            {
+                name: "Frontend",
+                url: "https://github.com/LionelOrh/Prueba-Tecnica-MCC-FrontEnd.git",
+            },
+        ],
+        technologies: [
+            {
+                name: "Spring Boot",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
+            },
+            {
+                name: "React",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+            },
+            {
+                name: "Tailwind CSS",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+            },
+            {
+                name: "MySQL",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+            },
+        ],
+    },
+];
+---
+
+<section class="projects" id="proyectos">
+    <h2 class="p-title"><Code class="w-10 h-10" /> Proyectos</h2>
+    <div class="projects-grid">
+        {
+            projects.map((project) => (
+                <article class="project-card">
+                    <div class="project-image-container">
+                        <img
+                            src={project.image.src}
+                            alt={project.title}
+                            class="project-image"
+                        />
+                    </div>
+                    <h3 class="project-title">{project.title}</h3>
+                    <div class="tech-stack">
+                        {project.technologies.map((tech) => (
+                            <div class="tech-item">
+                                <img
+                                    src={tech.icon}
+                                    alt={tech.name}
+                                    class="tech-icon"
+                                />
+                                <span>{tech.name}</span>
+                            </div>
+                        ))}
+                    </div>
+                    <p class="project-description">{project.description}</p>
+                    <div class="project-links">
+                        <a href={project.link} class="btn">
+                            <Link class="w-5 h-5" />
+                            Ver proyecto
+                        </a>
+                        <div class="project-github">
+                            {project.GitHub.map((repo) => (
+                                <a href={repo.url} target="_blank" class="btn">
+                                    <GitHub class="w-5 h-5" />
+                                    {repo.name}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    .projects {
+        text-align: start;
+        color: white;
+        width: 100%;
+        max-width: 880px;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        padding: 0 20px;
+    }
+    .p-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 100%;
+        margin-top: 10px;
+    }
+    .project-card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+    }
+    .project-image-container {
+        width: 100%;
+        height: 240px; /* Asegura que tenga una altura fija */
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .project-image {
+        width: 100%;
+        height: 100%; /* Asegura que la imagen llene todo el contenedor */
+        transition: transform 0.3s ease-in-out;
+        object-fit: cover; /* Asegura que la imagen se recorte en lugar de deformarse */ /* Ajusta el color y grosor */
+    }
+
+    .project-image-container:hover .project-image {
+        transform: scale(
+            1.1
+        ); /* Aplica el zoom solo cuando el cursor esté sobre la imagen */
+    }
+
+    .project-title {
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .tech-stack {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .tech-item {
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        border: 1px solid rgb(90, 87, 87);
+        padding: 2px 5px;
+        gap: 3px;
+    }
+    .tech-icon {
+        width: 15px;
+        height: 15px;
+    }
+    .tech-item span {
+        font-size: 12px;
+    }
+    .project-description {
+        font-size: 14px;
+        opacity: 0.6;
+    }
+    .project-links {
+        display: flex;
+        gap: 10px;
+    }
+    .project-github {
+        display: flex;
+        gap: 10px;
+    }
+    .btn {
+        display: inline-flex; /* Mantiene los botones en línea */
+        align-items: center; /* Alinea icono y texto */
+        text-decoration: none;
+        background: #1f2937;
+        color: white;
+        padding: 5px 5px;
+        border-radius: 14px;
+        border: 1px solid rgb(124, 124, 124);
+        font-size: 14px;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    /* Cambiar a 1 columna en móviles (menos de 768px) */
+    @media (max-width: 768px) {
+        .projects-grid {
+            grid-template-columns: 1fr; /* Solo 1 columna */
+        }
+        .projects{
+                padding: 0px 30px;
+            }
+        .project-card{
+            max-width: 100%;
+        }
+    }
+    @media (min-width: 430px) {
+        .projects{
+                padding: 0px 30px;
+            }
+    }
+
+    
+</style>

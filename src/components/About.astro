@@ -1,0 +1,51 @@
+---
+import User from "./icons/User.astro";
+---
+
+<section class="section" id="sobre-mi">
+    <h1 class="about-title">
+        <User class="w-10 h-10" />Sobre mí
+    </h1>
+    <p>
+        💻 Hola, soy Lionel Erix, un apasionado del desarrollo web con formación
+        en Computación e Información gracias a PRONABEC. Mi interés por la
+        tecnología comenzó de manera autodidacta, explorando diversas
+        herramientas y metodologías. A lo largo de mi formación, he trabajado en
+        proyectos personales y académicos, aplicando buenas prácticas de
+        desarrollo y utilizando metodologías ágiles como Scrum para optimizar la
+        gestión del trabajo.
+    </p>
+    <br />
+    <p>
+        🚀 Tengo experiencia en el desarrollo de aplicaciones web utilizando
+        tecnologías como Java, Spring Boot y frameworks modernos de frontend,
+        priorizando la escalabilidad, el rendimiento y la seguridad. Me motiva
+        analizar problemas complejos y diseñar soluciones eficientes, combinando
+        tecnología con estrategias óptimas de desarrollo. Siempre estoy en
+        búsqueda de nuevos desafíos y oportunidades para seguir aprendiendo,
+        mejorando mis habilidades y aplicando mis conocimientos en proyectos
+        innovadores.
+    </p>
+</section>
+
+<style>
+    .section {
+        color: white;
+        width: 100%;
+        max-width: 880px;
+        margin-bottom: 5rem;
+
+    }
+    .about-title {
+        font-size: 40px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    @media (min-width:390px) {
+        .section{
+            padding: 0 20px;
+        }
+    }
+</style>

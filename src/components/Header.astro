@@ -1,0 +1,79 @@
+<header id="header">
+    <nav id="nav">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#skill">Tecnologías</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="mailto:lionelorihuelac@gmail.com">Contacto</a>
+        <a href="/CV_Lionel.pdf" download="CV_Lionel.pdf" class="cv"
+            >Descarga mi CV</a
+        >
+    </nav>
+</header>
+
+<style>
+    header {
+        margin-top: 10px;
+        width: 100%;
+        max-width: 880px;
+        display: flex;
+        justify-content: center;
+    }
+    nav {
+        position: fixed;
+        gap: 10px;
+        align-items: center;
+        transition:
+            background 0.4s ease-in-out,
+            padding 0.4s ease-in-out;
+        background: transparent;
+        border-radius: 20px;
+        will-change: transform, opacity, backdrop-filter;
+        z-index: 1000;
+    }
+    nav a {
+        text-decoration: none;
+        color: white;
+        font-size: 15px;
+        transition: color 0.4s ease-in-out;
+        padding: 1px 10px;
+    }
+    nav a:hover {
+        color: rgb(124, 197, 189);
+        font-weight: bold;
+    }
+    .scrolled {
+        background: rgba(0, 0, 0, 0.2); /* En lugar de opacity */
+        backdrop-filter: blur(80px);
+        padding: 10px 10px;
+        border: 0.1px solid rgb(73, 73, 73);
+    }
+    .cv {
+        border: 1px solid rgb(126, 126, 126);
+        border-radius: 20px;
+    }
+
+    /* 📱📲 Ajuste en pantallas pequeñas */
+    @media (max-width: 780px) {
+        nav{
+            display: flex;
+            justify-content: center;
+        }
+        nav a{
+            font-size: 12px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const header = document.getElementById("nav");
+        if (!header) return;
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    });
+</script>

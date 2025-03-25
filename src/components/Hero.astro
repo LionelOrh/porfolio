@@ -1,0 +1,166 @@
+---
+import { Image } from "astro:assets";
+import profileImage from "../assets/profile.webp";
+import GitHub from "../components/icons/GitHub.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import Email from "./icons/Email.astro";
+---
+
+<section class="hero">
+    <div class="hero-content">
+        <!-- Imagen del perfil -->
+        <div class="hero-image">
+            <Image src={profileImage} alt="Foto de Lionel" class="hero-img" />
+        </div>
+
+        <!-- Contenedor del texto -->
+        <div class="hero-text">
+            <div class="hero-header">
+                <h1>Hola, soy <span class="highlight">liooDev</span></h1>
+                <span class="badge">Disponible para trabajar</span>
+            </div>
+            <p class="hero-description">
+                <strong>Apasionado por el desarrollo web</strong>, con
+                experiencia en Java, Spring Boot y tecnologías modernas de
+                frontend. Especializado en la creación de APIs seguras e
+                interfaces dinámicas, aplicando buenas prácticas para
+                desarrollar soluciones innovadoras y escalables.
+            </p>
+            <div class="hero-social">
+                <a href="#contacto" class="btn"
+                    ><Email class="w-5 h5" /> Contáctame</a
+                >
+                <a
+                    href="https://www.linkedin.com/in/lionelorcab/"
+                    class="btn"
+                    target="_blank"><LinkedIn class="w-5 h5" /> LinkedIn</a
+                >
+                <a
+                    href="https://github.com/LionelOrh"
+                    class="btn"
+                    target="_blank"><GitHub class="w-5 h5" />GitHub</a
+                >
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+    display: flex;
+    justify-content: start;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    width: 100%;
+    max-width: 880px;
+    padding: 0 20px;
+    }
+
+    .hero-content {
+    display: grid;
+    grid-template-columns: auto 2fr;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    width: 100%;
+    max-width: 100%;
+    transform: scale(1); /* Se mantiene al 100% */
+    transition: transform 0.3s ease-in-out;
+    }
+
+    .hero-description strong {
+        color: yellow;
+        font-size: 20px;
+    }
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-img {
+        width: 140px;
+        height: 100%;
+        border-radius: 20%;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hero-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Espacio entre el título y la etiqueta */
+    }
+
+    .hero-header h1 {
+        margin: 0;
+        font-size: 44px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .badge {
+        background: #00c4b4;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 14px;
+        font-size: 14px;
+    }
+
+    .btn {
+        display: inline-flex; /* Mantiene los botones en línea */
+        align-items: center; /* Alinea icono y texto */
+        text-decoration: none;
+        background: #1f2937;
+        color: white;
+        padding: 2px 12px;
+        border-radius: 14px;
+        border: 1px solid rgb(124, 124, 124);
+        font-size: 14px;
+        gap: 2px;
+    }
+    
+/* 📱📲 Responsivo para tablets */
+@media screen and (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        
+    }
+    
+    .hero-text {
+        text-align: start;
+    }
+
+    .hero-social {
+        justify-content: center;
+    }
+}
+
+/* 📱📲 Responsivo para móviles */
+@media screen and (max-width: 768px) {
+    .hero {
+        padding: 0px 30px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        }
+    .hero-image {
+        display: none; /* Oculta la imagen cuando la pantalla es pequeña */
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-social {
+        flex-direction: column;
+    }
+}
+
+
+</style>
