@@ -12,20 +12,17 @@
 ## 🛠 Tecnologías Utilizadas  
 
 ### Frontend:  
-- ⚡ Angular  
-- ⚛️ React  
+- 🚀 Astro  
 - 🖥️ HTML5, CSS3, JavaScript, TypeScript  
-
-### Backend:  
-- ☕ Java  
-- 🌱 Spring Boot  
-- 🛢️ MySQL  
 
 ### Herramientas & Otros:  
 - 🎨 Figma  
 - 💻 Git & GitHub  
-- 🚀 Astro  
-
 ---
+
+## 📬 Contacto
+Si quieres ponerte en contacto conmigo:
+- 📧 Correo: lionelorihuela@gmail.com
+- 🔗 LinkedIn: [Lionel Orihuela](https://www.linkedin.com/in/lionelorcab/)
 
 ¡Gracias por visitar mi portafolio! 😊🚀
